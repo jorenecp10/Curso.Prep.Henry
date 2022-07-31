@@ -189,6 +189,17 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  let cadena=n.toString()
+  let vector = cadena.split("")
+  
+  if(parseInt(vector[0])===9){
+    return true 
+
+  }else{
+    return false
+  }
+  
+  
   
 }
 
@@ -196,7 +207,25 @@ function empiezaConNueve(n) {
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
-  //Escribe tu código aquí  
+  //Escribe tu código aquí 
+
+  
+  let contador=0
+  let igual=arreglo[0]
+
+  for (let index = 0; index < arreglo.length; index++) {
+    if (igual===arreglo[index]) {
+      contador=contador+1
+      
+    }
+    
+  }
+   if (contador===arreglo.length) {
+    return true
+    
+   }else{
+    return false
+   }
   
 } 
 
@@ -206,6 +235,39 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+
+  array2 = []
+  let i=0
+  let contador=0
+
+  array.forEach(element => {
+
+    if (element==="Enero") {
+      array2[i]="Enero"
+      i = i+1
+      contador=contador+1
+      
+    }else if(element==="Marzo"){
+      array2[i]="Marzo"
+      i = i+1
+      contador=contador+1
+
+    }else if(element==="Noviembre"){
+      array2[i]="Noviembre"
+      i = i+1
+      contador=contador+1
+
+    }
+    
+  });
+
+  if (contador>2) {
+    return array2
+    
+  }else{
+    return "No se encontraron los meses pedidos"
+
+  }
 }
 
 
