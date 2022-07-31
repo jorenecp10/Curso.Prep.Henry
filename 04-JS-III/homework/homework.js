@@ -275,6 +275,20 @@ function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+
+  let newAarray=[]
+  let y=0
+
+  for (let index = 0; index < array.length; index++) {
+    
+    if (array[index] > 100) {
+      newAarray[y]=array[index]
+      y=y+1
+      
+    }
+  }
+
+  return newAarray
 }
 
 
@@ -286,16 +300,55 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let vector = []
+  
+  for (let index = 0; index < 10; index++) {
+    if (numero===index) {
+      break;
+      
+    }else{
+      numero=numero+2
+      vector[index]=numero
+    
+      }
+  }
+
+  if(vector.length===10){
+    return vector
+
+  }else{
+    return "Se interrumpió la ejecución"
+
+  }
+
 }
 
 
 function continueStatement(numero) {
-  //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
-  //Guardar cada nuevo valor en un array.    
-  //Devolver el array
-  //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
-  //Pista: usá el statement 'continue'
+  // Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
+  // Guardar cada nuevo valor en un array.    
+  // Devolver el array
+  // Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
+  // Pista: usá el statement 'continue'
   // Tu código:
+  
+
+  let vector = []
+  let contador=0
+
+  for (let index = 0; index < 10; index++) {
+
+    if (index===5) {
+      continue;
+    }
+    numero=numero+2
+    vector[contador]=numero
+    contador++
+    
+  }
+  return vector
+
+
 }
 
 
