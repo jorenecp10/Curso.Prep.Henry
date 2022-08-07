@@ -10,6 +10,10 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+
+  matriz=Object.entries(objeto)
+
+  return matriz
 }
 
 
@@ -18,6 +22,25 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  objeto = new Object()
+  
+
+  for (let index = 0; index < string.length; index++) {
+    contador=0
+    for (let  y= 0; y < string.length; y++) {
+      if (string[index]===string[y]) {
+        contador=contador+1
+        
+      }else{
+        continue;
+      }
+      
+      
+    }
+    objeto[string[index]]=contador
+    
+  }
+  return objeto
 }
 
 
@@ -26,6 +49,33 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  vector=[]
+  vector2=[]
+  vectorunion=[]
+  contador=0
+  contador1=0
+  for (let index = 0; index < s.length; index++) {
+
+    if (s[index]===s[index].toUpperCase()) {
+      vector[contador]=s[index]
+      contador=contador+1
+      
+    }else{
+      vector2[contador1]=s[index]
+      contador1=contador1+1
+      
+    }
+
+  }
+
+  vectorunion=vector+vector2
+
+  palabraNueva=vectorunion.split(",").join("")
+  return palabraNueva
+
+  
+
+
 }
 
 
@@ -35,6 +85,36 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  vector=[]
+  contadorPV=0
+  cadena=""
+  for (let index = 0; index < str.length; index++) {
+    if (str[index]===" ") {
+      contadorPV=contadorPV+1
+      cadena=""
+      
+    }else{
+      cadena=cadena+str[index]
+      vector[contadorPV]=cadena
+      
+      
+
+    }
+
+    
+  }
+  
+  for (let index = 0; index < vector.length; index++) {
+    vector[index]=vector[index].split("").reverse().join("")
+    
+  }
+
+  palabra = vector.join(" ")
+
+
+  return palabra
+
+
 } 
 
 
@@ -43,6 +123,24 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+
+  numero=numero.toString()
+  vector=[]
+  indicey=numero.length-1
+  
+  for (let index = 0; index < numero.length; index++) {
+    vector[index]=numero[indicey]
+    indicey=indicey-1
+  }
+  numero2=vector.join("")
+
+  if (numero===numero2) {
+    return "Es capicua"
+    
+  }else{
+    return "No es capicua"
+  }
+  
 }
 
 
@@ -50,6 +148,20 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  cadenaAux=""
+
+  for (let index = 0; index < cadena.length; index++) {
+    if (cadena[index]==="a"||cadena[index]==="b"||cadena[index]==="c") {
+      continue
+      
+    }else{
+      cadenaAux=cadenaAux+cadena[index]
+    }
+    
+    
+  }
+
+  return cadenaAux
 }
 
 
